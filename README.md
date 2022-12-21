@@ -16,3 +16,33 @@ This bot has been a great learning experience for me, as someone who is very new
 - Notify users of command cooldown to prevent spam and duration of cooldown.
 
 # Adding discord bot to Oracle cloud server
+- Sign up to https://cloud.oracle.com/, you may need to enter contact and card details
+- To choose the always free setting, make sure you choose these features: 
+![image](https://user-images.githubusercontent.com/98178943/208894510-024c69d0-0544-4231-a667-f8aae901d4af.png)
+- Depending on the image (ideally choose an Ubuntu one like Canonical Ubuntu 20.04) you will need to set up the environment.
+
+#### Setting up bot on ubuntu server
+- login and enter the following:
+```
+sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get install screen
+sudo apt-get install python3
+pip install discord
+pip install discord.py
+```
+#### Script to run bot in detached screen mode
+```
+#!/bin/bash
+screen -d -m -S discordbot python3 /home/pi/discordbot.py
+# starts bot in screen mode, gives it a name and detaches
+```
+#### Starting
+- Copy of the contents of your (or my) bot in and start it by executing the main python file.
+
+#### Quality of life improvements for the user
+- To make it easier for myself when adding, removing, updating features on the bot, and rather than entering the terminal and typing lots of commands. I have found it easier to use SSH software which makes managing my bot an ease. 
+- I use bitvise to manage mine and a tutorial for adding your oracle cloud server to bitvise can be found here.. https://www.youtube.com/watch?v=90JbCrB3m3I
+
+## Future plans
+- To continue adding new features where I will have to learn and understand new concepts and technologies (such as the sqlite database)
+- CI/CD pipeline

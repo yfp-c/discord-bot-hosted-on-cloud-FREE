@@ -1,4 +1,4 @@
-import discord, requests, json, random
+import discord, requests, json, random, asyncio
 from discord.ext import commands
 
 class Menu(discord.ui.View):
@@ -18,7 +18,11 @@ class Menu(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
 
     @discord.ui.button(label="Dare", style=discord.ButtonStyle.red)
@@ -33,7 +37,11 @@ class Menu(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Would you rather", style=discord.ButtonStyle.blurple)
     async def wyr(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -47,7 +55,11 @@ class Menu(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Never have I ever", style=discord.ButtonStyle.gray)
     async def nhie(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -60,7 +72,11 @@ class Menu(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Paranoia Question", style=discord.ButtonStyle.danger)
     async def pq(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -73,7 +89,11 @@ class Menu(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
     
 
 
@@ -93,7 +113,11 @@ class Menu_r(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Dare", style=discord.ButtonStyle.red)
     async def dare(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -106,7 +130,11 @@ class Menu_r(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Would you rather", style=discord.ButtonStyle.blurple)
     async def wyr(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -119,7 +147,11 @@ class Menu_r(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
-        await interaction.response.send_message(embed=embed,view=self)    
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
+        await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Never have I ever", style=discord.ButtonStyle.gray)
     async def nhie(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -132,7 +164,11 @@ class Menu_r(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
     @discord.ui.button(label="Paranoia Question", style=discord.ButtonStyle.danger)
     async def pq(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -145,7 +181,11 @@ class Menu_r(discord.ui.View):
         embed.add_field(name='\u200b', value=f"**Type:** {json_data['type']} | **Rating:** {json_data['rating']}", inline=True)
         embed.set_author(name=f'Requested by {interaction.user}', icon_url=interaction.user.avatar.url)
         button.disabled = True
+        await asyncio.sleep(0.5)
+        # await interaction.response.send_message(embed=embed,view=self)
         await interaction.response.send_message(embed=embed,view=self)
+        # Delete the original button message
+        await interaction.message.delete()
 
 
 

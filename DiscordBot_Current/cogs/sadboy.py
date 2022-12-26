@@ -11,7 +11,8 @@ class sadboy(commands.Cog):
         with open("./cogs/sad_boy_lyrics/sadboy.txt", "r", encoding=None, errors=None) as file:
             allText = file.readlines()
             words = list(map(str, allText))
-            embed = discord.Embed(title=f"😥😔☹", description=f"🎵 {random.choice(words)}", color=discord.Colour.random())
+            random.shuffle(words)
+            embed = discord.Embed(title=f"😥😔☹", description=f"🎵 {words[0]}", color=discord.Colour.random())
             await ctx.reply(embed = embed)
             # await ctx.reply(random.choice(words))       
 

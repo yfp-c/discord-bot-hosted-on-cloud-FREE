@@ -1,6 +1,8 @@
 import discord, sqlite3
 from discord.ext import commands
 
+processed_messages = {}
+
 class brilliant_count(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -9,8 +11,15 @@ class brilliant_count(commands.Cog):
     async def on_message(self, message):
         if message.author == self.bot.user:
             return
-        if message.content.lower() == 'brilliant' or 'brilliant!':
-            # Connect to the database
+        if (message.content.lower() == "brilliant") or (message.content.lower() == "brilliant!"):
+            # Get the processed message IDs for the user
+            user_messages = processed_messages.get(message.author.id, {})
+
+            # Check if the message has been processed
+            if message.id not in user_messages:
+                # Add the message ID to the user's dictionary
+                user_messages[message.id] = True
+                processed_messages[message.author.id] = user_messages
             conn = sqlite3.connect(r"./cogs/brilliant_count.db")
             c = conn.cursor()
 
@@ -37,7 +46,7 @@ class brilliant_count(commands.Cog):
 
     @commands.command(pass_context = True , aliases=['bc', 'brill_counter'])
     @commands.cooldown(1, 120, commands.BucketType.user)
-    async def brilliant_counter(self, ctx):
+    async def br_counter(self, ctx):
         if ctx.author == self.bot.user:
             return
         conn = sqlite3.connect(r"./cogs/brilliant_count.db")
@@ -59,7 +68,7 @@ class brilliant_count(commands.Cog):
 
     @commands.command()
     @commands.cooldown(1, 120, commands.BucketType.user)
-    async def brilliant_leaderboard(self, ctx):
+    async def br_leaderboard(self, ctx):
         # Connect to the database
         conn = sqlite3.connect(r"./cogs/brilliant_count.db")
         c = conn.cursor()

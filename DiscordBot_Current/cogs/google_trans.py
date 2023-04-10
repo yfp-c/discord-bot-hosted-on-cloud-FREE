@@ -48,7 +48,7 @@ class GoogleTrans(commands.Cog):
 async def setup(bot):
     await bot.add_cog(GoogleTrans(bot))
     
-# old
+# old old
 # import discord
 # from discord.ext import commands
 # from googletrans import Translator, LANGUAGES

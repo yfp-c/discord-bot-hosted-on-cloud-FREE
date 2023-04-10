@@ -46,3 +46,4 @@ screen -d -m -S discordbot python3 /home/pi/discordbot.py
 ## Future plans
 - To continue adding new features where I will have to learn and understand new concepts and technologies (such as the sqlite database)
 - CI/CD pipeline which I have attempted successfully here: https://github.com/yfp-c/CICD-with-discord-bot-and-concourse-on-oracle 
+- Containerize discord bot for others to use (for this I'll need to do a major cleanup)

@@ -7,7 +7,7 @@ class Biryani(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # Method to fetch a biryani image URL from the Biryani API
+    # A method to fetch a biryani image URL from the Biryani API
     def get_image_url(self):
         response = requests.get("https://biriyani.anoram.com/get")
         json_data = json.loads(response.text)

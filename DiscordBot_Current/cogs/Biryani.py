@@ -14,7 +14,7 @@ class Biryani(commands.Cog):
         image_url = json_data["image"]
         return image_url
 
-    # Listener to ignore bot's own messages
+    # A listener to ignore bot's own messages
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author == self.bot.user:

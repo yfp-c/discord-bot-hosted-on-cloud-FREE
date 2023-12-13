@@ -43,6 +43,8 @@ class embed_commands(commands.Cog):
         description = (f" **Goooooood mooooooorning {ctx.author.name}!!!** The commands are as follows: \n"
         "- **!quote/!q** to read my wonderful quotes, \n"
         "- **!sbot** to read my catchphrase, \n"
+        "- **!catpics** for pictures of cats, \n"
+        "- **!animequote** for random anime quotes by their characters and the name of the anime, \n"
         "- **!biryani** for an image of our favourite dish, \n"
         "- **!advice** if you are feeling lost and need advice, \n"
         "- **!fc/!fortunecookie** to read your fortune and lucky numbers for today! \n"
@@ -56,7 +58,9 @@ class embed_commands(commands.Cog):
         "- **!how** to say How are we doing guys?\n"
         "- **!br** to say brilliant!\n"
         "- **!trans/!translate** [language to translate to] [text] to translate!\n"
-        "- **!todo/!do** for my advice on what to do today! \n"
+        "- **!todo/!do** for my advice on what to do today, \n"
+        "- **!truth/!truthr** for truth or dare.. or a cheeky R rated truth or dare! \n"
+        "- **!????** There's a hidden command, can you guess it? :eyes: \n"
         " Also team, there's a **cooldown** on my commands! **Good luck!!!!**")
         embed = self.create_embed(description, 'good_luck')
         await ctx.reply(embed=embed)

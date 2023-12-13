@@ -7,14 +7,14 @@ class Biryani(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    # A method to fetch a biryani image URL from the Biryani API
+    # Method to fetch a biryani image URL from the Biryani API
     def get_image_url(self):
         response = requests.get("https://biriyani.anoram.com/get")
         json_data = json.loads(response.text)
         image_url = json_data["image"]
         return image_url
 
-    # A listener to ignore bot's own messages
+    # Listener to ignore bot's own messages
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author == self.bot.user:

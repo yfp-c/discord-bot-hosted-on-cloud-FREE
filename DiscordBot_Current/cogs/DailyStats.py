@@ -9,8 +9,12 @@ class DailyStats(commands.Cog):
         self.bot = bot
 
     # Method to generate a list of random percentages
-    def get_percentages(self, count=7):
+    def get_percentages(self, count=10):
         return [random.randint(0, 100) for _ in range(count)]
+        
+    # Method to calculate the average of the percentages
+    def get_average_percentage(self, percentages):
+        return sum(percentages) / len(percentages)
 
     # Method to fetch a quote from the Kanye West API
     def get_quote(self):
@@ -21,17 +25,23 @@ class DailyStats(commands.Cog):
 
     # Method to create a Discord embed with daily stats, quote, and footer
     def create_daily_stats_embed(self, ctx_author_name, percentages, quote):
+        average_percentage = self.get_average_percentage(percentages)
         embed = discord.Embed(
             colour=(discord.Colour.random()),
             description=f"HELLO {ctx_author_name}, your daily stats percentages are.. \n"
             f"\n"
-            f"-Health: **{percentages[0]}%**\n"
-            f"-Career: **{percentages[1]}%**\n"
-            f"-Happiness: **{percentages[2]}%**\n"
-            f"-Productivity: **{percentages[3]}%**\n"
-            f"-Luck: **{percentages[4]}%**\n"
-            f"-True love probability: **{percentages[5]}%**\n"
-            f"-Attractiveness: **{percentages[6]}%**\n"
+            f"– Health: **{percentages[0]}%**\n"
+            f"– Career: **{percentages[1]}%**\n"
+            f"– Happiness: **{percentages[2]}%**\n"
+            f"– Productivity: **{percentages[3]}%**\n"
+            f"– Luck: **{percentages[4]}%**\n"
+            f"– True love probability: **{percentages[5]}%**\n"
+            f"– Attractiveness: **{percentages[6]}%**\n"
+            f"– Financial Outlook: **{percentages[7]}%**\n"
+            f"– Mental Strength: **{percentages[8]}%**\n"
+            f"– Physical Strength: **{percentages[9]}%**\n"
+            f"\n"
+            f"Average of all your Stats: **{average_percentage:.2f}%**\n"
             f"\n"
             f"{quote} - Kanye West"
         )
